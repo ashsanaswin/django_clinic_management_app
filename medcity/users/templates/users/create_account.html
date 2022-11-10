@@ -1,0 +1,55 @@
+{% load static tailwind_tags %}
+<html lang="en" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>mysite</title>
+    {% tailwind_css %}
+  </head>
+  <body>
+    <div class="flex">
+      <div class="hero min-h-screen bg-base-200">
+        <div class="hero-content text-center">
+          <div class="max-w-md">
+            <h1 class="text-5xl font-bold">Hello there</h1>
+            <p class="py-6">
+              Register your profile here to get started , you will get a
+              wonderful experience here let's get started
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="flex justify-center hero min-h-screen bg-base-200">
+        <form method="POST">
+          {% csrf_token %}
+          <div class="mt-10 p-10 drop-shadow-xl shadow-2xl border-2 rounded-lg">
+            <div class="mt-1">
+              <h6 class="font-bold text-gray-500">UserName</h6>
+              {{form.username}}
+            </div>
+            <div class="mt-10">
+              <h6 class="font-bold text-gray-500">Email</h6>
+              {{form.email}}
+            </div>
+            <div class="mt-10">
+              <h6 class="font-bold text-gray-500">Password</h6>
+              {{form.password1}}
+            </div>
+
+            <div class="mt-10">
+              <h6 class="font-bold text-gray-500">Confirm Password</h6>
+              {{form.password2}}
+            </div>
+          </div>
+
+          <div
+            class="flex justify-center px-6 py-2.5 bg-blue-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out mt-10 cursor-pointer"
+          >
+            <input type="submit" name="sign_up" value="📝sign_up" />
+          </div>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>

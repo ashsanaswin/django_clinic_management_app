@@ -1,0 +1,143 @@
+{% load static tailwind_tags %}
+<html lang="en" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/main.css" />
+    <title>medcity</title>
+    {% tailwind_css %}
+  </head>
+  <body class="h-3000">
+    <nav class="relative container mb-auto pb-12">
+      <!--Flex container -->
+      <div
+        class="h-16 fixed right-0 left-0 top-0 flex items-center justify-between border-b-4 border bg-gray-100"
+      >
+        <!--Logo -->
+        <div class="p-2 flex w-40">
+          <img
+            class="rounded-full"
+            src="/static/logomedcity.png"
+            alt="medcitylogo"
+          />
+        </div>
+        <div>
+          <a href="{% url 'mymedcity:patient_home' %}" class="p-2"
+          > Home
+          </a>
+        </div>
+      </div>
+    </nav>
+    {% block content %} {% endblock %}
+    <section class="">
+      <div
+        class="fixed left-0 bottom-0 top-0 overflow-y-auto py-4 mt-16 px-3 ml-2 mb-4   bg-gray-50 dark:bg-gray-800 rounded-lg"
+      >
+        <ul class="space-y-2">
+          <li>
+            <a
+              href="{% url 'mymedcity:patient_dashboard' %}"
+              class="flex items-center p-2 text-base font-normal text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700"
+            >
+              <span class="flex-1 ml-3">Dashboard</span>
+              <span
+                class="inline-flex justify-center items-center p-3 ml-3 w-3 h-3 text-sm font-medium text-blue-600 bg-blue-200 rounded-full dark:bg-blue-900 dark:text-blue-200"
+                >></span
+              >
+            </a>
+          </li>
+          <li>
+            <a
+              href="#"
+              class="flex items-center p-2 text-base font-normal text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700"
+            >
+              <span class="flex-1 ml-3 whitespace-nowrap">Appointments</span>
+              <span
+                class="inline-flex justify-center items-center p-3 ml-3 w-3 h-3 text-sm font-medium text-blue-600 bg-blue-200 rounded-full dark:bg-blue-900 dark:text-blue-200"
+                >></span
+              >
+            </a>
+          </li>
+          <li>
+            <a
+              href="#"
+              class="flex items-center p-2 text-base font-normal text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700"
+            >
+              <span class="flex-1 ml-3 whitespace-nowrap">Inbox</span>
+              <span
+                class="inline-flex justify-center items-center p-3 ml-3 w-3 h-3 text-sm font-medium text-blue-600 bg-blue-200 rounded-full dark:bg-blue-900 dark:text-blue-200"
+                >3</span
+              >
+            </a>
+          </li>
+          <li>
+            <a
+              href="{% url 'users:patient_view_doctor' %}"
+              class="flex items-center p-2 text-base font-normal text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700"
+            >
+              <span class="flex-1 ml-3 whitespace-nowrap">Doctors</span>
+              <span
+                class="inline-flex justify-center items-center p-3 ml-3 w-3 h-3 text-sm font-medium text-blue-600 bg-blue-200 rounded-full dark:bg-blue-900 dark:text-blue-200"
+                >></span
+              >
+            </a>
+          </li>
+
+          <li>
+            <a
+              href="{% url 'users:logout' %}"
+              class="flex items-center p-2 text-base font-normal text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700"
+            >
+              <span class="flex-1 ml-3 whitespace-nowrap">Log Out</span>
+            </a>
+          </li>
+        </ul>
+        <ul
+          class="pt-4 mt-4 space-y-2 border-t border-gray-200 dark:border-gray-700"
+        >
+          <li>
+            <a
+              href="#"
+              class="flex items-center p-2 text-base font-normal text-gray-900 rounded-lg transition duration-75 hover:bg-gray-100 dark:hover:bg-gray-700 dark:text-white group"
+            >
+              <span class="flex-1 ml-3">Pricing</span>
+              <span
+                class="inline-flex justify-center items-center p-3 ml-3 w-3 h-3 text-sm font-medium text-blue-600 bg-blue-200 rounded-full dark:bg-blue-900 dark:text-blue-200"
+                >></span
+              >
+            </a>
+          </li>
+          <li>
+            <a
+              href="#"
+              class="flex items-center p-2 text-base font-normal text-gray-900 rounded-lg transition duration-75 hover:bg-gray-100 dark:hover:bg-gray-700 dark:text-white group"
+            >
+              <span class="ml-3">Community</span>
+            </a>
+          </li>
+          <li>
+            <a
+              href="{% url 'mymedcity:aboutus' %}"
+              class="flex items-center p-2 text-base font-normal text-gray-900 rounded-lg transition duration-75 hover:bg-gray-100 dark:hover:bg-gray-700 dark:text-white group"
+            >
+              <span class="flex-1 ml-3">About Us</span>
+              <span
+                class="inline-flex justify-center items-center p-3 ml-3 w-3 h-3 text-sm font-medium text-blue-600 bg-blue-200 rounded-full dark:bg-blue-900 dark:text-blue-200"
+                >></span
+              >
+            </a>
+          </li>
+          <li>
+            <a
+              href="#"
+              class="flex items-center p-2 text-base font-normal text-gray-900 rounded-lg transition duration-75 hover:bg-gray-100 dark:hover:bg-gray-700 dark:text-white group"
+            >
+              <span class="ml-3">Help</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </section>
+  </body>
+</html>

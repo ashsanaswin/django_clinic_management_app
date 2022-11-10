@@ -1,0 +1,62 @@
+{% extends 'mymedcity/pharmacy_base.html'%} {% block content %}
+<div class="flex justify-center">
+  <form method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+    <div
+      class="grid grid-rows-3 grid-flow-col gap-4 mt-12 drop-shadow-xl shadow-2xl"
+    >
+      <div class="mt-10 p-1">
+        <h6 class="font-bold text-gray-500">Medicine Name</h6>
+        <input placeholder="name" type="text" name="name" id="name" />
+      </div>
+      <div class="mt-10 p-1">
+        <h6 class="font-bold text-gray-500">Medicine Price</h6>
+        <input placeholder="price" type="text" name="price" id="price" />
+      </div>
+      <div class="mt-10 p-1">
+        <h6 class="font-bold text-gray-500">Manufacturing Date</h6>
+        <input placeholder="mfg date" type="date" name="mfg" id="mfg" />
+      </div>
+      
+      <div class="mt-10 p-1">
+        <h6 class="font-bold text-gray-500">Medicine Dose</h6>
+        <input placeholder="dose" type="text" name="dose" id="dose" />
+      </div>
+      <div class="mt-10 p-1">
+        <h6 class="font-bold text-gray-500">Usable dosage</h6>
+        <input placeholder="dosage" type="text" name="dosage" id="dosage" />
+      </div>
+      <div class="mt-10 p-1">
+        <h6 class="font-bold text-gray-500">Expiry Date</h6>
+        <input placeholder="exp date" type="date" name="exp" id="exp" />
+      </div>
+      <div class="mt-10 p-1">
+        <h6 class="font-bold text-gray-500">Description</h6>
+        <input placeholder="description" type="text" name="desc" id="desc" />
+      </div>
+      
+      
+      <div class="mt-10 p-1">
+        <h6 class="font-bold text-gray-500">Mfg License</h6>
+        <input placeholder="mfg lic" type="text" name="mfg_lic" id="mfg_lic" />
+      </div>
+
+      <div class="mt-2 p-10">
+        <input
+          class="cursor-pointer"
+          type="file"
+          accept="image/*"
+          name="upload"
+          id="upload"
+        />
+      </div>
+    </div>
+
+    <div
+      class="flex justify-center px-6 py-2.5 bg-blue-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-green-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out mt-10 cursor-pointer"
+    >
+      <input type="submit" name="Add_Medicine" value="+Add_Medicine" />
+    </div>
+  </form>
+</div>
+{%endblock%}

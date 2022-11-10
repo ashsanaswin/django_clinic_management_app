@@ -1,0 +1,24 @@
+{% load static tailwind_tags %}
+<html lang="en" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>mysite</title>
+    {% tailwind_css %}
+  </head>
+  <body>
+    <div class="hero min-h-screen bg-base-200">
+      <div class="hero-content text-center">
+        <div class="max-w-md">
+          <h1 class="text-5xl font-bold">Successfully Booked Your Appointment</h1>
+          <p class="py-6">
+            Your appointment slot is booked,Our staff will contact you for conformation,You can manage your appointment in Appointments,for further enquary <a href='#' class=" border border bg-blue-800 rounded-lg text-white font-bold shadow-xl ">contact us</a> 
+          </p>
+
+          <a href="{% url 'mymedcity:patient_home' %}" class="btn btn-primary">Home</a>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

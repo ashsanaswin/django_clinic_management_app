@@ -1,0 +1,71 @@
+{% extends 'mymedcity/doctor_base.html'%} {% block content %}
+<section><div class="ml-60 mr-8 mt-4 ">
+  <div
+        class="pl-2 rounded dark:bg-gray-800 flex items-center justify-between text-white"
+      >
+      Home / Medicine
+  </div>
+</section>
+<section class="grid grid-rows-4 grid-flow-col gap-2 ml-60 mt-4 mr-8">
+
+  {%for p in med%}
+  <div class="inline-block  p-11 mb-2 shadow-lg border-2 border-gray-800 rounded-lg ">
+    <div class="flex justify-center">
+      <img
+        class=" rounded-full  "
+        src="{{med.image.url}}"
+        alt="med image"
+      />
+    </div>
+    <div>
+          <h5 class="flex justify-center pl-3 text-gray-900 text-xl font-medium mb-2">
+            {{p.name}}
+          </h5>
+        </div>
+    <div class="rounded-lg shadow-lg bg-white max-w-sm">
+      <div class=" p-2">
+        
+        <div>
+          <p class="pl-3 text-gray-700 text-base mb-4">
+            price : {{p.price}}
+          </p>
+        </div>
+        <div>
+          <p class="pl-3 text-gray-700 text-base mb-4">
+            description : {{p.description}}
+          </p>
+        </div>
+        <div>
+          <p class="pl-3 text-gray-700 text-base mb-4">
+             Medicine Dose : {{p.dose}}
+          </p>
+        </div>
+        <div>
+          <p class="pl-3 text-gray-700 text-base mb-4">
+            Usable dosage : {{p.dosage}}
+          </p>
+        </div>
+        <div>
+          <p class="pl-3 text-gray-700 text-base mb-4">
+            Manufacturing Date : {{p.mfg_date}}
+          </p>
+        </div>
+        <div>
+          <p class="pl-3 text-gray-700 text-base mb-4">
+            Expiry Date: {{p.exp_date}}
+          </p>
+        </div>
+        <div>
+          <p class="pl-3 text-gray-700 text-base mb-4">
+            Manufacturing License : {{p.mfg_lic}}
+          </p>
+        </div>
+        
+    
+        
+      </div>
+    </div>
+  </div>
+  {%endfor%}
+</section>
+{%endblock%}
